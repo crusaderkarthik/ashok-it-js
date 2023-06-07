@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML JS Events</title>
+
+	
+</head>
+<body>
+	<h1>JavaScript HTML JS Events</h1>
+
+	<!-- onchange -->
+	<label>Enter your First Name: <input type="text" id="field1" onchange="upperCase()"></label>
+	<br/>
+
+	<!-- onclick -->
+	<button onclick="success()">Submit</button>
+	<p id="successmessage"></p>
+
+	<!-- Mouser Over and Mouse Out -->
+	<div style="background-color: red; width: 100px; height: 100px;" onmouseover="mouseover(this)" onmouseout="mouseout(this)">
+		
+	</div>
+
+	<hr>
+
+	<!-- onkeydown -->
+	<input type="text" placeholder="Type some text" onkeydown="keydown()">
+	<p id="keydownmessage"></p>
+
+<!-- JavaScript starts Here -->
+
+	<script type="text/javascript">
+
+		//onchange
+		function upperCase(){
+			let jsid = document.getElementById('field1')
+			jsid.value = jsid.value.toUpperCase()
+		}
+
+		//onclick
+		function success(){
+			// document.getElementById("successmessage").innerHTML = "Thanks for submitting your message"
+
+			let jsid1 = document.getElementById("successmessage")
+			jsid1.innerHTML = alert("Thanks for submitting, our team will reach out to you")
+
+		}
+
+		//onmouseover
+		function mouseover(x){
+			x.style.height= "200px";
+			x.style.weight="200px";
+			x.innerHTML="Thank you"
+
+		}
+
+		//onmouseout
+		function mouseout(x){
+			x.style.height= "100px";
+			x.style.weight="100px";
+			x.innerHTML="Please over me"
+
+		}
+
+		//keydown
+		function keydown(){
+			let keys = document.getElementById("keydownmessage")
+			keys.innerHTML = "Please enter your first name and then your surname"
+		}
+
+
+
+
+		
+// onchange		    An HTML element has been changed
+// onclick		    The user clicks an HTML element
+// onmouseover		The user moves the mouse over an HTML element
+// onmouseout		The user moves the mouse away from an HTML element
+// onkeydown		The user pushes a keyboard key
+// onload		    The browser has finished loading the page
+	</script>
+</body>
+</html>
