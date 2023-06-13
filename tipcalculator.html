@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import bootstrap cdn -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Tip Calculator</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Tip Calculator</h1>
+          <form id="form">
+            <div class="form-group"></div>
+            <label for="bill">Bill Amount</label>
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="bill"
+              required
+              placeholder="Enter Bill Amount"
+            />
+            <label for="tip">Tip Percent</label>
+            <input
+              type="number"
+              class="form-control mb-3"
+              id="tip"
+              required
+              placeholder="Enter Tip %"
+            />
+            <label for="people">Number of People</label>
+            <input
+              type="number"
+              class="form-control"
+              id="people"
+              required
+              placeholder="Enter Number of People"
+            />
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+          </form>
+          <h6 id="result"></h6>
+        </div>
+      </div>
+    </div>
+    <script>
+      var form = document.getElementById("form");
+      var bill = document.getElementById("bill");
+      var tip = document.getElementById("tip");
+      var people = document.getElementById("people");
+      var tipAmount = document.getElementById("tipAmount");
+      var totalAmount = document.getElementById("totalAmount");
+      var form = document.getElementById("form");
+      var result = document.getElementById("result");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var billValue = bill.value;
+        var tipValue = tip.value;
+        var peopleValue = people.value;
+
+        var totalAmountInt =
+          parseInt(billValue) +
+          (parseInt(billValue) * parseInt(tipValue)) / 100;
+        var tipAmountInt = (parseInt(billValue) * parseInt(tipValue)) / 100;
+
+        var totalAmountInt =
+          parseInt(billValue) +
+          (parseInt(billValue) * parseInt(tipValue)) / 100;
+
+        var perPersonInt =
+          parseInt(totalAmountInt) / parseInt(peopleValue).toFixed(2);
+
+        result.innerHTML = `Tip Amount: Rs ${tipAmountInt} <br> Total Amount: Rs ${totalAmountInt} <br> Per Person: Rs ${perPersonInt}`;
+      });
+    </script>
+  </body>
+</html>
